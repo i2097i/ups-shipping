@@ -169,7 +169,7 @@ module Shipping
             RequestAction "Track"
             RequestOption "activity"
           }
-          @shipper.build(xml, "Shipper")
+          @shipper.build(xml, "ShipperNumber")
           TrackingNumber tracking_number
         }
       end
