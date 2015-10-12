@@ -169,7 +169,7 @@ module Shipping
             RequestAction "Track"
             RequestOption "activity"
           }
-          ShipperNumber @shipper if @shipper.present?
+          ShipperNumber "2X4449"
           TrackingNumber tracking_number
         }
       end
