@@ -185,7 +185,7 @@ module Shipping
           }
           ShipperNumber @shipper
           ReferenceNumber {
-            Value tracking_number
+            Value reference_number
           }
         }
       end
