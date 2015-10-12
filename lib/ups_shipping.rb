@@ -169,18 +169,29 @@ module Shipping
             RequestAction "Track"
             RequestOption "activity"
           }
-          ShipperNumber "2X4449"
-          # TrackingNumber tracking_number
+          TrackingNumber tracking_number
+        }
+      end
+
+      @http.commit("/ups.app/xml/Track", track_request.to_xml)
+    end
+
+    def track_shipment_by_reference_number(reference_number)
+      track_request = Nokogiri::XML::Builder.new do
+        TrackRequest {
+          Request {
+            RequestAction "Track"
+            RequestOption "activity"
+          }
+          ShipperNumber @shipper
           ReferenceNumber {
             Value tracking_number
           }
         }
       end
-      puts track_request.to_xml
 
       @http.commit("/ups.app/xml/Track", track_request.to_xml)
     end
-
 
     private
     def access_request(user, password, license)
