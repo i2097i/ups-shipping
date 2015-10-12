@@ -178,14 +178,14 @@ module Shipping
     end
 
     def track_shipment_by_reference_number(reference_number)
-      puts "track_shipment_by_reference_number #{@shipper}"
+      shipper = @shipper.to_s
       track_request = Nokogiri::XML::Builder.new do
         TrackRequest {
           Request {
             RequestAction "Track"
             RequestOption "activity"
           }
-          ShipperNumber "#{@shipper}"
+          ShipperNumber shipper
           ReferenceNumber {
             Value reference_number
           }
