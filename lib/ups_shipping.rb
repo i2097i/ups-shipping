@@ -185,7 +185,7 @@ module Shipping
             RequestAction "Track"
             RequestOption "activity"
           }
-          ShipperNumber @shipper
+          ShipperNumber "#{@shipper}"
           ReferenceNumber {
             Value reference_number
           }
