@@ -171,6 +171,7 @@ module Shipping
           }
           ShipperNumber "2X4449"
           TrackingNumber tracking_number
+          ReferenceNumber tracking_number
         }
       end
       puts track_request.to_xml
