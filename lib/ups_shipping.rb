@@ -169,11 +169,11 @@ module Shipping
             RequestAction "Track"
             RequestOption "activity"
           }
-          @shipper.build(xml, "ShipperNumber")
+          ShipperNumber @shipper if @shipper.present?
           TrackingNumber tracking_number
         }
       end
-      puts track_request
+
       @http.commit("/ups.app/xml/Track", track_request.to_xml)
     end
 
