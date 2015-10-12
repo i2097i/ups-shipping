@@ -35,6 +35,7 @@ module Shipping
     def initialize(user, password, license, options={})
       @options = options
       @shipper = options[:shipper]
+      puts "HERE!!! Options = #{options}\n shipper = #{@shipper}"
       @access_request = access_request(user, password, license)
       @http = Http.new(@access_request, :test => @options[:test])
 
