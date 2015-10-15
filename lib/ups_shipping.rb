@@ -190,7 +190,7 @@ module Shipping
           }
         }
       end
-      puts track_request.to_xml
+      # puts track_request.to_xml
 
       @http.commit("/ups.app/xml/Track", track_request.to_xml)
     end
